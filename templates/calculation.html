@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% extends "base.html" %}
+    <head>
+        {% block head %}{{ super() }}{% endblock %}
+    </head>
+    <body>
+        {% block nav_bar %}{{ super() }}{% endblock %}
+        {% block title %} Calculation {% endblock %}
+        {% block main %}{{ super() }}{% endblock %}
+
+
+        {% block content %}
+
+        <form action="/calculate" method="post">
+            <input type="number" name="num1" placeholder="Enter number 1" required value="{{ num1 }}">
+            <input type="number" name="num2" placeholder="Enter number 2" required value="{{ num2 }}">
+            <br>
+            <button type="submit" name="operation" value="add">+</button>
+            <button type="submit" name="operation" value="subtract">-</button>
+            <button type="submit" name="operation" value="multiply">*</button>
+            <button type="submit" name="operation" value="divide">/</button>
+        </form>
+
+            <div>Result: {{ result }}</div>
+
+
+        {% endblock %}
+
+
+        {% block footer %}{{ super() }}{% endblock %}
+
+    </body>
+</html>

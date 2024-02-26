@@ -1,0 +1,17 @@
+.footer {
+    background-color: #feef7b;
+    height: 50px;
+}
+
+
+.title {
+    text-align: center;
+    margin:10px;
+    margin-bottom: 20px;
+    border-bottom-color: #12296c;
+    border-bottom-style: groove;
+    font-size:xxx-large;
+    font-weight: bold;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color:#12296c;
+}
