@@ -1,17 +1,21 @@
 .footer {
-    background-color: #feef7b;
+    background-color: #6b6b6a;
     height: 50px;
 }
 
+
+.nav {
+    background-color: chartreuse;
+}
 
 .title {
     text-align: center;
     margin:10px;
     margin-bottom: 20px;
-    border-bottom-color: #12296c;
+    border-bottom-color: #232324;
     border-bottom-style: groove;
     font-size:xxx-large;
     font-weight: bold;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    color:#12296c;
+    color:#232324;;
 }

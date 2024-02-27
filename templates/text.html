@@ -1,0 +1,34 @@
+<html lang="en">
+    {% extends "base.html" %}
+    <head>
+        {% block head %}{{ super() }}{% endblock %}
+    </head>
+    <body>
+        {% block navbar %}{{ super() }}{% endblock %}
+        {% block title %} Text {% endblock %}
+        {% block main %}{{ super() }}{% endblock %}
+
+
+        {% block content %}
+
+        <div class="container-fluid">
+            <h1>RoBERTa Sentiment Analysis Prediction</h1>
+            <p>ONNX Model Demonstration by mosa (Version 1.0)</p>
+            <div class="form-group">
+            <label for="textInput">Bitte Text eingeben und Enter drücken</label>
+            <input type="text" class="form-control" id="textInput" onkeyup="getSentiment(event,this.value);">
+            </div>
+
+            <div id="answerPart" style="visibility: hidden;">
+            <p><b>Answer:</b>
+            <div id="answer"></div>
+            </p>
+            </div>
+            </div>
+        
+        {% endblock %}
+
+        {% block footer %}{{ super() }}{% endblock %}
+        {% block script %}{{ super() }}{% endblock %}
+    </body>
+</html>
