@@ -4,6 +4,7 @@
         {% block head %}{{ super() }}{% endblock %}
     </head>
     <body>
+        {% block header %}{{ super() }}{% endblock %}
         {% block navbar %}{{ super() }}{% endblock %}
         {% block title %} Text {% endblock %}
         {% block main %}{{ super() }}{% endblock %}
@@ -28,7 +29,6 @@
         
         {% endblock %}
 
-        {% block footer %}{{ super() }}{% endblock %}
         {% block script %}{{ super() }}{% endblock %}
     </body>
 </html>

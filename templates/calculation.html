@@ -2,9 +2,27 @@
 <html lang="en">
     {% extends "base.html" %}
     <head>
-        {% block head %}{{ super() }}{% endblock %}
+        {% block head %}{{ super() }}
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            function clearFields() {
+                document.getElementById("num1").value = "";
+                document.getElementById("num2").value = "";
+                document.getElementsByName("operation")[0].selectedIndex = 0;
+            }
+
+            window.onload = function() {
+                clearFields();
+            };
+
+        </script>
+
+        {% endblock %}
+
     </head>
     <body>
+        {% block header %}{{ super() }}{% endblock %}
         {% block navbar %}{{ super() }}{% endblock %}
         {% block title %} Calculation {% endblock %}
         {% block main %}{{ super() }}{% endblock %}
@@ -12,24 +30,29 @@
 
         {% block content %}
 
-        <form action="/calculate" method="post">
-            <input type="number" name="num1" placeholder="Enter number 1" required value="{{ num1 }}">
-            <input type="number" name="num2" placeholder="Enter number 2" required value="{{ num2 }}">
-            <br>
-            <button type="submit" name="operation" value="add">+</button>
-            <button type="submit" name="operation" value="subtract">-</button>
-            <button type="submit" name="operation" value="multiply">*</button>
-            <button type="submit" name="operation" value="divide">/</button>
+
+            <form action="/calculate" method="post">
+            <input type="number" name="num1" id="num1" value="{{ num1 }}">
+            <select name="operation">
+                <option value=""></option>
+                <option value="add">+</option>
+                <option value="subtract">-</option>
+                <option value="multiply">*</option>
+                <option value="divide">/</option>
+            </select>
+            <input type="number" name="num2" id="num2" value="{{ num2 }}">
+            <button type="submit" name="equals">=</button>
+
         </form>
 
-            <div>Result: {{ result }}</div>
+        <div>Result: {{ num1 }}  {{ operation }} {{ num2 }} = {{ result }}</div>
 
 
         {% endblock %}
 
-
-        {% block footer %}{{ super() }}{% endblock %}
-        {% block script %}{{ super() }}{% endblock %}
+        {% block scripts %}
+        {{ super() }}
+        {% endblock %}
 
     </body>
 </html>

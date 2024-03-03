@@ -1,4 +1,6 @@
+
 function setActiveNavbarItem() {
+    
     const navbarItems = document.querySelectorAll('.navbar-nav a');
     const currentUrl = window.location.href;
     navbarItems.forEach(item => {
